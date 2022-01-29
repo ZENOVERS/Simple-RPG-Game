@@ -20,6 +20,12 @@ public class Mob_HP_Bar : MonoBehaviour
         if (Player.Enemy == "Mob1")
         {
             slHP.value = (float)Mob1_Move.Mob1_HP / Mob1_Move.Mob1_MAXHP;
+
+            if (slHP.value <= 0)
+                transform.Find("Fill Area").gameObject.SetActive(false);
+            else
+                transform.Find("Fill Area").gameObject.SetActive(true);
+                
             GameObject.Find("Mob_HP_Text").GetComponent<Text>().text = Mob1_Move.Mob1_HP + "/" + Mob1_Move.Mob1_MAXHP;
         }
     }

@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public static int P_Exp;
     public static int P_ATK;
     public static int P_DEF;
+    public static string Enemy;
 
 
     // Start is called before the first frame update
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag.Equals("Mob1"))
         {
             P_HP -= Information.Mob1_ATK;
+            Enemy = other.gameObject.tag.ToString();
         }
     }
 }
